@@ -61,9 +61,9 @@
        <div class="btn-group-vertical">
        <a class="btn btn-primary" href="/registro_funcionario" role="button">Cadastrar Funcionário</a>
        <br>
-       <a class="btn btn-primary" href="#" role="button">Cadastrar Sala</a>
+       <a class="btn btn-primary" href="/sala" role="button">Cadastrar Sala</a>
        <br>
-       <a class="btn btn-primary" href="#" role="button">Alocação de um Funcionário</a>
+       <a class="btn btn-primary" href="/registro_funcionario" role="button">Alocação de um Funcionário</a>
        <br>
        <a class="btn btn-primary" href="#" role="button">Cadastrar Departamento</a>
        </div>

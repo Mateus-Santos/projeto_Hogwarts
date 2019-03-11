@@ -72,7 +72,7 @@
     <br>
     <br>
     <label class="texto_registro" for="nome_completo">Escreva seu nome completo:</label>
-    <input type="email" class="form-control" id="nome_completo" placeholder="nome@exemplo.com">
+    <input type="email" class="form-control" id="nome_completo">
   </div>
   <div class="form-group">
     <label class="texto_registro" for="sexo">Escolha seu sexo:</label>

@@ -17,3 +17,5 @@ Route::view('/alocacao-sala', 'alocacao-sala');
 Route::view('/list-sala', 'list-sala');
 
 Route::view('/list-alocacao', 'list-alocacao');
+
+Route::view('/list-funcionario','list-funcionario');
