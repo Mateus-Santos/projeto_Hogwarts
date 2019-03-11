@@ -13,3 +13,7 @@ Route::view('/login','login');
 Route::view('/sala', 'sala');
 
 Route::view('/alocacao-sala', 'alocacao-sala');
+
+Route::view('/list-sala', 'list-sala');
+
+Route::view('/list-alocacao', 'list-alocacao');
