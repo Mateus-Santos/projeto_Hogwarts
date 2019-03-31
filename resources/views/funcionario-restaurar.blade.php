@@ -1,7 +1,7 @@
 @extends('layout.base', ["current"=>"funcionarios"])
 
 @section('body')
-<h1 class="titulo">Lista de Funcionários</h1>
+<h1 class="titulo">Lista de Funcionários excluidos</h1>
 <table class="table">
   <thead>
     <tr>
@@ -22,12 +22,7 @@
       <td>{{$func->endereco}}</td>
       <td>{{$func->sexo}}</td>
       <td>
-      <form action = "{{route('funcionarios.destroy', $func)}}" method = "POST">
-                @csrf
-                <a class = "btn btn-success" href="{{route('funcionarios.edit', $func)}}">Editar</a>
-                @method('DELETE')
-                <button type = "submit" class = "btn btn-danger">Excluir</button>
-            </form>  
+            <a href="{{route('funcionarios.restore', $func->id)}}" class="btn btn-success"> Restaurar </a>  
       </td>
     </tr>
     @endforeach
