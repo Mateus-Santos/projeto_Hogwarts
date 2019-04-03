@@ -9,8 +9,8 @@ class Funcionario extends Model
 {
     use SoftDeletes;
 
-    public function funcionario(){
-        return $this->hasMany('App\Funcionario');
+    public function cargo(){
+        return $this->belongsTo('App\Cargo');
     }
 
 }

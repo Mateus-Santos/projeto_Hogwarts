@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\funcionario;
+use App\Cargo;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
@@ -35,7 +36,8 @@ class FuncionarioController extends Controller
 
     public function create()
     {
-        return view('registro_funcionario');
+        $cargos = Cargo::all();
+        return view('registro_funcionario', compact('cargos'));
     }
 
     public function store(Request $request)
@@ -45,6 +47,7 @@ class FuncionarioController extends Controller
         $funcionario->sexo = $request->input("sexo");
         $funcionario->endereco = $request->input("endereco");
         $funcionario->foto = $request->input("foto");
+        $funcionario->cargo_id = $request->input("cargo");
         $funcionario->save();
         return redirect()->route('funcionarios.index');
     }

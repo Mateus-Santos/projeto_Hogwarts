@@ -14,6 +14,12 @@
             <input type = "text" class = "form-control" id="endereco" name="endereco" value="{{$funcionario->endereco}}">
             <label for="foto">Foto: </label>
             <input type = "file" class = "form-control-file" id="foto" name="foto" value="{{$funcionario->foto}}">
+
+            <select class = "form-control" name = "cargo" id="cargo">
+            @foreach($cargos as $car)
+                <option value={{$car->id}}>{{$car->cargo}}</option>
+            @endforeach
+            </select>
             <br>
             <button class = "btn btn-primary" type = "submit">Salvar</button>
         </div>

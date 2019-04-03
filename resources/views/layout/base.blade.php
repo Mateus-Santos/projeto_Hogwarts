@@ -35,6 +35,12 @@
                         <li>
                             <a href="{{route('funcionarios.restaurar')}}">Restaurar funcionário excluido</a>
                         </li>
+                        <li>
+                            <a href="{{route('cargos.create')}}">Adiciona um novo cargo</a>
+                        </li>
+                        <li>
+                            <a href="{{route('cargos.index')}}">Listar todos os cargos registrados</a>
+                        </li>
                     </ul>
                 </li>
                 <li @if($current == "departamentos") class = "active" @endif >

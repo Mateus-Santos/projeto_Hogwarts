@@ -1,8 +1,8 @@
 @extends('layout.base', ["current"=>"funcionarios"])
 
 @section('body')
-<h1 class="titulo">Lista de Funcionários</h1>
-<table class="table">
+<h1>Lista de Funcionários</h1>
+<table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">RUB</th>
@@ -10,7 +10,7 @@
       <th scope="col">Foto</th>
       <th scope="col">Endereço</th>
       <th scope="col">Sexo</th>
-      <th scope="col">Ações</th>
+      <th scope="col">Cargo</th>
     </tr>
   </thead>
   <tbody>
@@ -21,14 +21,7 @@
       <td>{{$func->foto}}</td>
       <td>{{$func->endereco}}</td>
       <td>{{$func->sexo}}</td>
-      <td>
-      <form action = "{{route('funcionarios.destroy', $func)}}" method = "POST">
-                @csrf
-                <a class = "btn btn-success" href="{{route('funcionarios.edit', $func)}}">Editar</a>
-                @method('DELETE')
-                <button type = "submit" class = "btn btn-danger">Excluir</button>
-            </form>  
-      </td>
+      <td>{{$func->cargo["nome"]}}</td>
     </tr>
     @endforeach
   </tbody>

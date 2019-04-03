@@ -18,6 +18,13 @@
       <option>Outro</option>
     </select>
     <br>
+    <label for="cargo">Cargo: </label>
+    <select class = "form-control" name = "cargo" id="cargo">
+            @foreach($cargos as $car)
+                <option value={{$car->id}}>{{$car->nome}}</option>
+            @endforeach
+    </select>
+    <br>
     <label class="texto_registro" for="endereco">Escreva seu endereço:</label>
     <input type="text" class="form-control" id="endereco" name="endereco">
     <br>
