@@ -1,122 +1,21 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layout.base', ["current"=>"departamentos"])
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Cadastro de Departamento</title>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-<style>
-        body{
-            background-image:url("imagens/tela_registro.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-        .div_principal{
-            position: absolute;
-            top: 2%;
-            left: 34%;
-        }
-        .titulo_principal{
-            font-family:Georgia;
-            text-align: justify;
-            font-size: 45pt;
-            color:#AD0F12;
-            text-shadow: 0px 0px 2px #BC2123;
-        }
-        .registro{
-            position:absolute;
-            top: 15%;
-            left: 35%;
-            width: 30%;
-            background-color: #C5BEC5;
-            box-shadow: 0px 0px 25px red;
-        }
-        .titulo_registro{
-            position:absolute;
-            top: 5%;
-            left: 20%;
-            font-weight:bold;
-            font-size:20pt ;
-        }
-        .subtitulo_registro{
-            position:absolute;
-            top: 20%;
-            left: 20%;
-            font-weight:bold;
-            font-size:15pt;
-        }
-        .texto_registro{
-            font-size:15pt;
-            color:black;
-            font-weight:bold;
-            text-indent: 5px;
-        }
-        .botao{
-            position:absolute;
-            left: 41%;
-            top: 92%;
-        }
-    </style>
-</head>
-<body>
-<div class="registro">
-        <br>
-        <br>    
-        <br>
-<p class="titulo_registro">Ministério da Magia de Hogwarts</p>
+@section('body')
+<h1>Ministério da Magia de Hogwarts</h1>
 <br>
-<p class="subtitulo_registro">Cadastro de Departamento</p>
-<form>
-    <div class="form-group">
-        <br>
-        <br>    
-        <br>
+<p>Cadastro de Departamento</p>
+<form action = "{{route('departamentos.store')}}" method = "POST">
+@csrf
         <br>
         <label class="texto_registro" for="nome_sala">Nome do Departamento:</label>
-        <input type="text" class="form-control" id="nome_sala" placeholder="digite aqui o nome do departamento">
-    </div>
+        <input type="text" class="form-control" id="nome_sala" name="nome_departamento" placeholder="digite aqui o nome do departamento">
     <br>
-    <div class="form-group">
         <label class="texto_registro" for="numero_sala">Nome do Coordenador:</label>
-        <input type="text" class="form-control" id="numero_sala" placeholder="digite aqui o nome do coordenador do departamento">   
-    </div>
+        <input type="text" class="form-control" id="numero_sala" name="nome_coordenador" placeholder="digite aqui o nome do coordenador do departamento">   
     <br>
-    <div class="form-group">
         <label class="texto_registro" for="func_responsavel">Sala de funcionamento:</label>
-        <input type="text" class="form-control" id="func_responsavel" placeholder="digite aqui o nome da sala de funcionamento">   
-    </div>
+        <input type="text" class="form-control" id="func_responsavel" name ="sala_funcionamento" placeholder="digite aqui o nome da sala de funcionamento">   
     <br>
-    <br>
-    <br>
-    <div class="botao">
     <button type="submit" class="btn btn-primary">PRONTO!</button>
-    </div>   
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+</form>
+@endsection

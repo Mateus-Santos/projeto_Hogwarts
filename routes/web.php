@@ -7,7 +7,7 @@ Route::get('/', function(){
 
 Route::get('/funcionario/restaurar/', 'FuncionarioController@indexTrashed')->name('funcionarios.restaurar');
 Route::get('/funcionarios/restaurar/{id}', 'FuncionarioController@restore')->name('funcionarios.restore');
-
+Route::resource('departamentos', 'DepartamentoController');
 Route::resource('funcionarios', 'FuncionarioController');
 
 /*

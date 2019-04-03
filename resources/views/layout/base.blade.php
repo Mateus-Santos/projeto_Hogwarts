@@ -37,14 +37,14 @@
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "produtos") class = "active" @endif >
-                    <a href="#produtosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">X</a>
-                    <ul class="collapse list-unstyled" id="produtosSubmenu">
+                <li @if($current == "departamentos") class = "active" @endif >
+                    <a href="#departamentosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Departamentos opções</a>
+                    <ul class="collapse list-unstyled" id="departamentosSubmenu">
                         <li>
-                            <a href="">Novo</a>
+                            <a href="{{route('departamentos.create')}}">Novo departamento</a>
                         </li>
                         <li>
-                            <a href="">Listar</a>
+                            <a href="{{route('departamentos.index')}}">Listar departamentos</a>
                         </li>
                     </ul>
                 </li>
