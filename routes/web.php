@@ -10,6 +10,7 @@ Route::get('/funcionarios/restaurar/{id}', 'FuncionarioController@restore')->nam
 Route::resource('cargos', 'CargoController');
 Route::resource('departamentos', 'DepartamentoController');
 Route::resource('funcionarios', 'FuncionarioController');
+Route::get('');
 
 /*
 Route::view('/tela_principal','tela_principal');
