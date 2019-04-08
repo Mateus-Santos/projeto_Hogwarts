@@ -1,8 +1,9 @@
 @extends('layout.base', ["current"=>"departamentos"])
 
 @section('body')
-<h1>Lista de departamento</h1>
-<table class="table">
+<h1 class="titulo">Lista de departamento</h1>
+<div class="listas_tabelas">
+<table class="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -29,6 +30,6 @@
     </tr>
     @endforeach
   </tbody>
-
 </table>
+</div>
 @endsection

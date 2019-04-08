@@ -1,9 +1,10 @@
 @extends('layout.base', ["current"=>"departamentos"])
 
 @section('body')
-<h1>Ministério da Magia de Hogwarts</h1>
+
+<h1 class="titulo">Registrar Departamento</h1>
 <br>
-<p>Cadastro de Departamento</p>
+<div class="tela_registro">
 <form action = "{{route('departamentos.store')}}" method = "POST">
 @csrf
         <br>
@@ -18,4 +19,5 @@
     <br>
     <button type="submit" class="btn btn-primary">PRONTO!</button>
 </form>
+</div>
 @endsection

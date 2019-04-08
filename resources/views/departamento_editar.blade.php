@@ -1,10 +1,11 @@
 @extends('layout.base', ["current"=>"departamentos"])
 
 @section('body')
+<div class="tela_registro">
     <form action = "{{route('departamentos.update', $departamento)}}" method = "POST">
         @csrf
         @method('PUT')
-            <h1>Edição de departamento</h1>
+            <h1 class="titulo">Edição de departamento</h1>
             <label for="nome_sala">Nome sala: </label>
             <input type = "text" class = "form-control" id="nome_sala" name="nome_sala" value="{{$departamento->nome}}">
             <label for="nome_coordenador">Nome coordenador: </label>
@@ -14,4 +15,5 @@
             <br>
             <button class = "btn btn-primary" type = "submit">Salvar</button>
     </form>
+</div>
 @endsection

@@ -6,7 +6,39 @@
     <link href="{{asset('css/style.css')}}" rel = "stylesheet">
     <link href="{{asset('css/side-bar.css')}}" rel = "stylesheet">
     <meta name="csrf-token" content = "{{csrf_token()}}">
-    <title>Tela Principal</title>
+    <style>
+        .listas_tabelas{
+            position: absolute;
+            background-color: #1C1C1C;
+            left: 23%;
+            top: 30%;
+            width: 70%;
+            box-shadow: #8F0808 0px 0px 15px;
+
+        }
+
+        .titulo{
+            position: absolute;
+            left: 38%;
+            text-shadow: #350105 0px 0px 3px;
+            top: 17%;
+            font-size: 40pt;
+            color: #A70C19;
+        }
+
+        .tela_registro{
+            position: absolute;
+            color: #A70C19;
+            font-size: 15pt;
+            text-shadow: black 0px 0px 2px;
+            background-color: #e0d9da;
+            left: 35%;
+            top: 30%;
+            width: 50%;
+            box-shadow: #8F0808 0px 0px 15px;
+        }
+    </style>
+    <title></title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>

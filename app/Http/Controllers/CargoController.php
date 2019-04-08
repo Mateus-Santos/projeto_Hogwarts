@@ -90,7 +90,7 @@ class CargoController extends Controller
      */
     public function destroy(Cargo $cargo)
     {
-        $funcionario->delete();
+        $cargo->delete();
         return redirect()->route('cargos.index');
     }
 }

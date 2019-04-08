@@ -2,7 +2,8 @@
 
 @section('body')
 <h1 class="titulo">Lista de Funcionários excluidos</h1>
-<table class="table">
+<div class="listas_tabelas">
+<table class="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">RUB</th>
@@ -27,6 +28,6 @@
     </tr>
     @endforeach
   </tbody>
-
-</table>
+  </table>
+</div>
 @endsection

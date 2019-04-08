@@ -70,8 +70,9 @@ class FuncionarioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Funcionario $funcionario)
-    {
-        return view('funcionario_editar', compact('funcionario'));
+    {   
+        $cargos = Cargo::all();
+        return view('funcionario_editar', compact('funcionario', 'cargos'));
     }
 
     /**
@@ -87,6 +88,7 @@ class FuncionarioController extends Controller
         $funcionario->sexo = $request->input("sexo");
         $funcionario->endereco = $request->input("endereco");
         $funcionario->foto = $request->input("foto");
+        $funcionario->cargo_id = $request->input("cargo");
         $funcionario->save();
         return redirect()->route('funcionarios.index');
     }

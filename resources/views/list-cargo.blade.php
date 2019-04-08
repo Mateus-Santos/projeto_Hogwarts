@@ -1,12 +1,15 @@
 @extends('layout.base', ["current"=>"cargos"])
 
 @section('body')
-<h1>Lista de cargos</h1>
-<table class="table">
+
+<h1 class="titulo">Lista de cargos</h1>
+<div class="listas_tabelas">
+<table class="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Cargo</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +19,6 @@
       <td>{{$car->nome}}</td>
       <td>
       <form action = "{{route('cargos.destroy', $car)}}" method = "POST">
-                @csrf
-                <a class = "btn btn-success" href="{{route('cargos.edit', $car)}}">Editar</a>
                 @method('DELETE')
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  
@@ -26,4 +27,5 @@
     @endforeach
   </tbody>
 </table>
+</div>
 @endsection
