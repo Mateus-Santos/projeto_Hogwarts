@@ -20,6 +20,11 @@ class FuncionarioController extends Controller
         return view('list-funcionario', compact('funcionarios'));
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //Função para restaurar
 
     public function indexTrashed(){

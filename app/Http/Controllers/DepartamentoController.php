@@ -25,6 +25,11 @@ class DepartamentoController extends Controller
         return view('', compact('departamentos'));
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //Função para restaurar
 
     public function restore($id){

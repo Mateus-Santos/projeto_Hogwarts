@@ -100,7 +100,18 @@
                         <li>
                             <a href="/clientes">Listar</a>
                         </li>
-                    </ul>
+                    </ul>  
+                </li>
+                <li @if($current == "sair") class = "active" @endif>
+                    <a href="#sairSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Sair</a>
+                    <ul class="collapse list-unstyled" id="sairSubmenu">
+                        <li>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button type="submit" class = "btn btn-danger">Sair</button>
+                            </form>      
+                        </li>
+                    </ul>  
                 </li>
             </ul>
             
