@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function(){
-    return view('tela_principal');
-});
+
+Route::view('/', 'tela_principal');
+
 
 
 Route::get('/funcionario/restaurar/', 'FuncionarioController@indexTrashed')->name('funcionarios.restaurar');
@@ -10,7 +10,7 @@ Route::get('/funcionarios/restaurar/{id}', 'FuncionarioController@restore')->nam
 Route::resource('cargos', 'CargoController');
 Route::resource('departamentos', 'DepartamentoController');
 Route::resource('funcionarios', 'FuncionarioController');
-Route::get('');
+
 
 /*
 Route::view('/tela_principal','tela_principal');
