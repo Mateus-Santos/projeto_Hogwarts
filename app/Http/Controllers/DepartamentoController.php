@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\departamento;
+use App\Departamento;
 use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
