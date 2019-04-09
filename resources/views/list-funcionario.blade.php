@@ -8,11 +8,11 @@
     <tr>
       <th scope="col">RUB</th>
       <th scope="col">Nome</th>
-      <th scope="col">Foto</th>
       <th scope="col">Endereço</th>
       <th scope="col">Sexo</th>
       <th scope="col">Cargo</th>
       <th scope="col">Ações</th>
+      <th scope="col">Foto</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +20,6 @@
     <tr>
       <th scope="row">{{$func->id}}</th>
       <td>{{$func->nome}}</td>
-      <td>{{$func->foto}}</td>
       <td>{{$func->endereco}}</td>
       <td>{{$func->sexo}}</td>
       <td>{{$func->cargo["nome"]}}</td>
@@ -32,6 +31,7 @@
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  
             </td>
+      <td><img class="imagem" src="../storage/{{$func->foto}}"/></td>
     </tr>
     @endforeach
   </tbody>

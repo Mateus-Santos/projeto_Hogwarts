@@ -37,6 +37,11 @@
             width: 50%;
             box-shadow: #8F0808 0px 0px 15px;
         }
+
+        .imagem{
+            width: 150px;
+            height: 100px;
+        }
     </style>
     <title></title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>

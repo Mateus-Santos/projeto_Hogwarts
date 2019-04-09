@@ -19,6 +19,7 @@
       <td>{{$car->nome}}</td>
       <td>
       <form action = "{{route('cargos.destroy', $car)}}" method = "POST">
+                @CSRF
                 @method('DELETE')
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  

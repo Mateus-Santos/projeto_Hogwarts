@@ -20,18 +20,6 @@ class CargoController extends Controller
 
     //Função para restaurar
 
-    public function indexTrashed(){
-        $cargos = Cargo::onlyTrashed()->get();
-        return view('', compact('cargos'));
-    }
-
-    //Função para restaurar
-
-    public function restore($id){
-        $cargos = Cargo::onlyTrashed()->find($id);
-        $cargos->restore();
-        return redirect()->route('cargos.index');
-    }
 
     public function create()
     {

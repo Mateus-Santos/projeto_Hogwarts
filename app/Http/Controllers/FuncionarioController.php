@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\funcionario;
 use App\Cargo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FuncionarioController extends Controller
 {
@@ -46,8 +47,10 @@ class FuncionarioController extends Controller
         $funcionario->nome = $request->input("nome");
         $funcionario->sexo = $request->input("sexo");
         $funcionario->endereco = $request->input("endereco");
-        $funcionario->foto = $request->input("foto");
         $funcionario->cargo_id = $request->input("cargo");
+        $path = $request->file("foto")->store('images', 'public');
+        $funcionario->foto = $path;
+        //$funcionario->foto = $request->input("foto");
         $funcionario->save();
         return redirect()->route('funcionarios.index');
     }
@@ -87,7 +90,9 @@ class FuncionarioController extends Controller
         $funcionario->nome = $request->input("nome");
         $funcionario->sexo = $request->input("sexo");
         $funcionario->endereco = $request->input("endereco");
-        $funcionario->foto = $request->input("foto");
+        $path = $request->file("foto")->store('images', 'public');
+        $funcionario->foto = $path;
+        //$funcionario->foto = $request->input("foto");
         $funcionario->cargo_id = $request->input("cargo");
         $funcionario->save();
         return redirect()->route('funcionarios.index');

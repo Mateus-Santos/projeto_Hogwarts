@@ -3,7 +3,7 @@
 @section('body')
 <h1 class="titulo">Edição de funcionario</h1>
 <div class="tela_registro">
-    <form action = "{{route('funcionarios.update', $funcionario)}}" method = "POST">
+    <form action = "{{route('funcionarios.update', $funcionario)}}" method = "POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
             <label for="nome">Nome: </label>
