@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\departamento;
+use App\Departamento;
+use App\Funcionario;
+use App\Sala;
 use Illuminate\Http\Request;
 
 class DepartamentoController extends Controller
@@ -40,7 +42,10 @@ class DepartamentoController extends Controller
 
     public function create()
     {
-        return view('departamento');
+
+        $salas = sala::all();
+        $funcionarios = Funcionario::all();
+        return view('departamento', compact('funcionarios', 'salas'));
     }
 
     public function store(Request $request)

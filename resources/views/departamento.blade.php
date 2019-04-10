@@ -11,11 +11,21 @@
         <label class="texto_registro" for="nome_sala">Nome do Departamento:</label>
         <input type="text" class="form-control" id="nome_sala" name="nome_departamento" placeholder="digite aqui o nome do departamento">
     <br>
-        <label class="texto_registro" for="numero_sala">Nome do Coordenador:</label>
-        <input type="text" class="form-control" id="numero_sala" name="nome_coordenador" placeholder="digite aqui o nome do coordenador do departamento">   
+    <label for="coordenador">Nome Coordenador: </label>
+    <select class = "form-control" name = "coordenador" id="coordenador">
+            @foreach($funcionarios as $func)
+            @if($func->cargo_id == 1)
+                <option value={{$func->id}}>{{$func->nome}}</option>
+            @endif    
+            @endforeach
+    </select>   
     <br>
-        <label class="texto_registro" for="func_responsavel">Sala de funcionamento:</label>
-        <input type="text" class="form-control" id="func_responsavel" name ="sala_funcionamento" placeholder="digite aqui o nome da sala de funcionamento">   
+    <label for="sala_funcionamento">Sala de funcionamento: </label>
+    <select class = "form-control" name = "sala_funcionamento" id="sala_funcionamento">
+            @foreach($salas as $sal)
+                <option value={{$sal->id}}>{{$sal->nome_sala}}</option>
+            @endforeach
+    </select>   
     <br>
     <button type="submit" class="btn btn-primary">PRONTO!</button>
 </form>

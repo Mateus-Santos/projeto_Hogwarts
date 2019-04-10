@@ -61,7 +61,7 @@
                     <a href="/">Página Inicial</a>
                 </li>
                 <li @if($current == "funcionarios") class = "active" @endif>
-                    <a href="#funcionariosSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Funcionários opções</a>
+                    <a href="#funcionariosSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Funcionários</a>
                     <ul class="collapse list-unstyled" id="funcionariosSubmenu">
                         <li>
                             <a href="{{route('funcionarios.create')}}">Registrar um novo funcionário</a>
@@ -81,7 +81,7 @@
                     </ul>
                 </li>
                 <li @if($current == "departamentos") class = "active" @endif >
-                    <a href="#departamentosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Departamentos opções</a>
+                    <a href="#departamentosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Departamentos</a>
                     <ul class="collapse list-unstyled" id="departamentosSubmenu">
                         <li>
                             <a href="{{route('departamentos.create')}}">Novo departamento</a>
@@ -91,16 +91,16 @@
                         </li>
                     </ul>
                 </li>
-                <li @if($current == "clientes") class = "active" @endif>
-                    <a href="#clientesSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">X</a>
-                    <ul class="collapse list-unstyled" id="clientesSubmenu">
+                <li @if($current == "salas") class = "active" @endif >
+                    <a href="#salasSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Salas</a>
+                    <ul class="collapse list-unstyled" id="salasSubmenu">
                         <li>
-                            <a href="/clientes/novo">Nova</a>
+                            <a href="{{route('salas.create')}}">Nova Sala</a>
                         </li>
                         <li>
-                            <a href="/clientes">Listar</a>
-                        </li>
-                    </ul>  
+                            <a href="{{route('salas.index')}}">Listar salas</a>
+                        </li>                                              
+                    </ul>
                 </li>
                 <li @if($current == "sair") class = "active" @endif>
                     <a href="#sairSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Sair</a>

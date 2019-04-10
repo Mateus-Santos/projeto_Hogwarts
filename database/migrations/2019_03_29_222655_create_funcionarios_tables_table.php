@@ -19,8 +19,6 @@ class CreateFuncionariosTablesTable extends Migration
             $table->string('sexo');
             $table->string('endereco');
             $table->string('foto');
-            $table->bigInteger('cargo_id')->unsigned();
-            $table->foreign('cargo_id')->references('id')->on('cargos');
             $table->timestamps();
         });
     }

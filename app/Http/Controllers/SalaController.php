@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Funcionario;
 use App\Sala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SalaController extends Controller
 {
@@ -12,6 +13,11 @@ class SalaController extends Controller
     {
         $salas = Sala::all();
         return view('list-sala', compact('salas'));
+    }
+
+    public function construct()
+    {
+        $this->middleware('auth');
     }
 
     //Função para restaurar
@@ -30,12 +36,17 @@ class SalaController extends Controller
         $sala->restore();
         return redirect()->route('salas.index');
     }
+    
+    public function create()
+    {
+        return view('sala');
+    }
 
     public function store(Request $request)
     {
         $sala = new Sala();
-        $sala->nome_sala = $request->input("nome_da_sala");
-        $sala->numero_sala = $request->input("numero_da_sala");
+        $sala->nome_sala = $request->input("nome_sala");
+        $sala->numero_sala = $request->input("numero_sala");
         $sala->funcionario_responsavel = $request->input("funcionario_responsavel");
         $sala->save();
         return redirect()->route('salas.index');
@@ -59,9 +70,8 @@ class SalaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Sala $sala)
-    {   
-        $sala = Sala::all();
-        return view('sala_editar', compact('sala', 'salas'));
+    {        
+        return view('sala_editar', compact('sala'));
     }
 
     /**
@@ -73,8 +83,8 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-        $sala->nome_sala = $request->input("nome_da_sala");
-        $sala->numero_sala = $request->input("numero_da_sala");
+        $sala->nome_sala = $request->input("nome_sala");
+        $sala->numero_sala = $request->input("numero_sala");
         $sala->funcionario_responsavel = $request->input("funcionario_responsavel");        
         $sala->save();
         return redirect()->route('salas.index');

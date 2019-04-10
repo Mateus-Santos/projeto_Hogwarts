@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\funcionario;
+use App\Funcionario;
 use App\Cargo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
