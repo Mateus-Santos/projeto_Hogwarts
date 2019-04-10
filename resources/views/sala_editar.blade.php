@@ -3,17 +3,23 @@
 @section('body')
 <h1 class="titulo">Editar Salas:</h1>
 <div class="tela_registro">
-<form action = "{{route('salas.update', $sala)}}" method = "POST">
+<form action = "{{route('salas.update', $sala)}}" method = "POST" enctype="multipart/form-data">
 @csrf
-@method('PUT')
+
     <label for="nome_sala">Informe o nome da sala:</label>
-    <input type="text" class="form-control" id="nome_sala" name="nome_sala" value="{{$sala->nome_sala}}">
+    <input type="text" class="form-control" id="nome_sala" name="nome_sala">
     <label for="numero_sala">Informe o número da sala:</label>
-    <input type="text" class="form-control" id="numero_sala" name="numero_sala" value="{{$sala->numero_sala}}">  
+    <input type="text" class="form-control" id="numero_sala" name="numero_sala">
+
     <label for="funcionario_responsavel">Funcionário Responsável:</label>
-    <input type="text" class="form-control" id="funcionario_responsavel" name="funcionario_responsavel" value="{{$sala->funcionario_responsavel}}">    
+    <select class = "form-control" name = "funcionario_responsavel" id="funcionario_responsavel">
+    @foreach($funcionarios as $func)
+                <option value={{$func->nome}}>{{$func->nome}}</option>
+    @endforeach
+    </select>
     <br>
     <button type="submit" class="btn btn-danger">Confirmar!</button>
+    @method('PUT')
 </form>
 </div>
 @endsection

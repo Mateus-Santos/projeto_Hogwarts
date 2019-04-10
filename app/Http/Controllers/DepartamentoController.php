@@ -77,7 +77,10 @@ class DepartamentoController extends Controller
      */
     public function edit(Departamento $departamento)
     {
-        return view('departamento_editar', compact('departamento'));
+        $salas = sala::all();
+        $funcionarios = Funcionario::all();
+        return view('departamento_editar', compact('funcionarios', 'salas','departamento'));
+
     }
 
     /**
@@ -89,9 +92,9 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, Departamento $departamento)
     {
-        $departamento->nome = $request->input("nome_sala");
+        $departamento->nome = $request->input("nome_departamento");
         $departamento->nome_coordenador = $request->input("nome_coordenador");
-        $departamento->sala_funcionamento = $request->input("func_responsavel");
+        $departamento->sala_funcionamento = $request->input("sala_funcionamento");
         $departamento->save();
         return redirect()->route('departamentos.index');
     }

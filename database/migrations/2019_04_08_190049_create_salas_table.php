@@ -17,7 +17,7 @@ class CreateSalasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome_sala');
             $table->string('numero_sala');
-            $table->string('funcionario_responsavel');            
+            $table->string('funcionario_responsavel');
             $table->timestamps();
         });
     }

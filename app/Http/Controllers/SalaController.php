@@ -39,7 +39,8 @@ class SalaController extends Controller
     
     public function create()
     {
-        return view('sala');
+        $funcionarios = Funcionario::all();
+        return view('sala', compact('funcionarios'));
     }
 
     public function store(Request $request)
@@ -71,7 +72,8 @@ class SalaController extends Controller
      */
     public function edit(Sala $sala)
     {        
-        return view('sala_editar', compact('sala'));
+        $funcionarios = Funcionario::all();
+        return view('sala_editar', compact('funcionarios', 'sala'));
     }
 
     /**
