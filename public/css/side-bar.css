@@ -16,6 +16,10 @@ p {
     color: #999;
 }
 
+body#foto_fundo{
+    background-image: url("../imagens/fundo2.jpg");
+    background-size: 100%;
+}
 
 a,
 a:hover,
