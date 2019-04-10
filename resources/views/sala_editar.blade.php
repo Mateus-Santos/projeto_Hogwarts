@@ -5,6 +5,7 @@
 <div class="tela_registro">
 <form action = "{{route('salas.update', $sala)}}" method = "POST">
 @csrf
+@method('PUT')
     <label for="nome_sala">Informe o nome da sala:</label>
     <input type="text" class="form-control" id="nome_sala" name="nome_sala" value="{{$sala->nome_sala}}">
     <label for="numero_sala">Informe o número da sala:</label>

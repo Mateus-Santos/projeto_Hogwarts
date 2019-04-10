@@ -83,8 +83,8 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-        $sala->nome_sala = $request->input("nome_da_sala");
-        $sala->numero_sala = $request->input("numero_da_sala");
+        $sala->nome_sala = $request->input("nome_sala");
+        $sala->numero_sala = $request->input("numero_sala");
         $sala->funcionario_responsavel = $request->input("funcionario_responsavel");        
         $sala->save();
         return redirect()->route('salas.index');
